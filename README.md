@@ -7,6 +7,8 @@ A generic authentication UI prototype + form validation states.
 Change the UI states for each screen using the dark bar at the bottom of the screen.  
 Try it out!
 
+![UICraft Auth](/src/images/uicraft-screenshot@2x.png?raw=true "Title")
+
 ---
 
 ## Purpose
