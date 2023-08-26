@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import Link from 'next/link'
+import ErrorMessage from "@/app/error-messages"
 import UICraftStates from "@/components/uicraftstates"
 import { Button} from "@/components/buttons"
 
@@ -30,7 +31,7 @@ const ForgotPassword = () => {
             <input type="email" placeholder="Enter your email" className={`input ${uicraftState === 'invalid-email' && "input--error"}`}></input>
             {uicraftState === 'invalid-email' && (
               <div className="input--error input--error-message">
-                <p>Please enter a valid email</p>
+                <p>{ErrorMessage.invalidEmail}</p>
               </div>
             )}
           </div>
