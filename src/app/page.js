@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Link from 'next/link'
+import ErrorMessage from "@/app/error-messages"
 import { Button, SignInWith } from "@/components/buttons"
 import UICraftStates from "@/components/uicraftstates"
 
@@ -15,6 +16,7 @@ const SignIn = () => {
   return (
     <main>
       <section className="page--auth">
+
         <UICraftStates>
           <select onChange={handleDropdownChange}>
             <option value="default">Default</option>
@@ -34,7 +36,7 @@ const SignIn = () => {
 
             {uicraftState === 'invalid-email' && (
               <div className="input--error input--error-message">
-                <p>Please enter a valid email</p>
+                <p>{ErrorMessage.invalidEmail}</p>
               </div>
             )}
           </div>
@@ -46,13 +48,13 @@ const SignIn = () => {
 
             {uicraftState === 'pass-error' && (
               <div className="input--error input--error-message">
-                <p>Wrong password</p>
+                <p>{ErrorMessage.wrongPassword}</p>
               </div>
             )}
 
             {uicraftState === 'email-and-pass-error' && (
               <div className="input--error input--error-message">
-                <p className="txt--w-35">Your password is incorrect or this account doesn’t exist.</p>
+                <p className="txt--w-35">{ErrorMessage.accountNotExist}</p>
               </div>
             )}
           </div>
